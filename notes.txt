@@ -1,0 +1,478 @@
+
+Python 
+
+
+
+Released in 1991 by Guido Van Rossu
+
+
+Uses : 
+
+    web development (server-side),
+    software development,
+    mathematics,
+    system scripting
+
+
+Why do we use Python?
+
+    Because it’s platform independent.
+    Simple to learn and write code.
+    Code length is small, you can write big applications with fewer lines of code.
+    It runs on interpreter system.
+    The code executes directly without converting it into machine code.
+
+    It can be procedural way, an object-oriented way or a functional way
+
+
+Basics :
+
+    Indentation : proper spacing should be followed 
+    Indentation refers to the spaces at the beginning of a code line.
+        If 5 > 2:
+        print(“this”)
+        else: 
+        print(“that”)
+
+Comments
+
+        Single line : starts with #
+        # This is a comment
+        Multiline comment : written with “”” <lins> “””
+        “””
+        This
+        Is
+        Multiline comment
+         “””
+
+Variables
+  - No command to declare a variable (No int, float etc)
+
+     Variable is created as soon as u assign it a value
+
+       x = 4       # x is of type int
+       x = "Sally" # x is now of type str
+       print(x)
+
+
+Type casting
+
+    x = str(3)    # x will be '3' 
+    y = int(3)    # y will be 3.
+    z = float(3)  # z will be 3.0
+    
+
+
+    To find the type of a variable u can use type function 
+    Like type(x)
+
+
+
+    Variables are case sensitive 
+    Many Values to Multiple Variables : Python allows you to assign values to multiple variables in one line:
+    X, Y, Z = “X”, “Y”, “Z”
+
+    And you can assign the same value to multiple variables in one line
+    X = Y = Z =  500
+
+
+Output variables :
+    Use print function : print(x)
+
+
+    Allowed : stars with A-z, and _ 
+    And should have only, A-z, 0-9 and _
+
+
+- Data types
+
+    In programming, data type is an important concept.
+    Python has the following data types built-in by default, in these categories:
+
+        Text Type:	    str
+        Numeric Types:	int, float, complex
+        Sequence Types:	list, tuple, range
+        Mapping Type:	dict
+        Set Types:	    set, frozenset
+        Boolean Type:	bool
+        Binary Types:	bytes, bytearray, memoryview
+        None Type:	    NoneType
+
+    We can check the type of any object by using the type() function:
+
+Strings in Python
+
+    Strings in python are surrounded by either single quotation marks, or double quotation marks.
+
+   -Multiline Strings
+        We can assign a multiline string to a variable by using three quotes:
+            a = """Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua."""
+            print(a)
+
+    -Slicing Strings
+        We can return a range of characters by using the slice syntax.
+        Specify the start index and the end index, separated by a colon, to return a part of the string
+            Example:-
+                b = "Hello, World!"
+                print(b[2:5])
+
+            -Negative Indexing
+                Use negative indexes to start the slice from the end of the string:
+                    b = "Hello, World!"
+                    print(b[-5:-2])
+                        here we return (-5) and (-2) result will be "orl" 
+
+    -Modify Strings
+        Python has a set of built-in methods that you can use on strings.
+
+        -Upper Case
+            The upper() method returns the string in upper case:
+              Example:-
+                a = "Hello, World!"
+                print(a.upper())
+
+        -Lower Case
+            The lower() method returns the string in lower case:
+              Example:-
+                a = "Hello, World!"
+                print(a.lower())
+
+        -Remove Whitespace
+            The strip() method removes any whitespace from the beginning or the end:
+              Example:-
+                a = " Hello, World! "
+                print(a.strip()) # returns "Hello, World!"
+
+        -Replace String
+            The replace() method replaces a string with another string:
+              Example:-
+                a = "Hello, World!"
+                print(a.replace("H", "J"))'
+
+        -Split String
+            The split() method returns a list where the text between the specified separator becomes the list items.
+            The split() method splits the string into substrings if it finds coma betweet strings.
+              Example:-
+                a = "Hello, World!"
+                print(a.split(",")) # returns ['Hello', ' World!']
+
+   -String Concatenation
+
+            To concatenate, or combine, two strings we use + operator.
+            a = "Hello"
+            b = "World"
+            c = a + b
+            print(c)
+
+        NOTE: we can't concatenate a string with a int or float value directly 
+
+
+    - Format - Strings
+        As we know that we can't concatenate a string and a number directly,
+         but we can use f-strings or the format() method! to combine string and number
+        To specify a string as an f-string, simply put an f in front of the string literal, and add curly brackets {} as placeholders for variables and other operations.
+          Example:-
+            age = 36
+            txt = f"My name is John, I am {age}"
+            print(txt)
+        
+        A placeholder can include a modifier to format the value.
+        A modifier is included by adding a colon : followed by a legal formatting type, like .2f which means fixed point number with 2 decimals:
+          Example:-
+            price = 59
+            txt = f"The price is {price:.2f} dollars"
+            print(txt) #result  = The price is 59.00 dollars
+        
+        A placeholder can contain Python code, like math operations:
+            Example:-
+                txt = f"The price is {20 * 59} dollars"
+                print(txt)
+
+    - Escape Characters
+        In python we can't use double quotes directly, because it's not Allowed,
+        for using double quotes we have to put a \"Backslash"  in the front of the character.
+            Example:-
+                txt = "We are the so-called \"Vikings\" from the north."
+
+            Escape Characters are following:-
+                \'	Single Quote    #this will insert a single quote where we want 
+                \\	Backslash	 #This will insert one \ backslash
+                \n	New Line	#this will insert a new line
+                \r	Carriage Return	
+                \t	Tab	    #this will insert a tab spaces
+                \b	Backspace	#This will removes the backspace of that character 
+                \f	Form Feed	
+                \ooo	Octal value	
+                \xhh	Hex value
+
+
+    - String Methods
+
+        There are lot of built-in methods available in python,
+        Note: All string methods return new values. They do not change the original string.
+        
+        -Most Useful Methods:
+            capitalize()	Converts the first character to upper case
+            casefold()	Converts string into lower case
+            count()	Returns the number of times a specified value occurs in a string
+            find()	Searches the string for a specified value and returns the position of where it was found
+            index()	Searches the string for a specified value and returns the position of where it was found
+            lower()	Converts a string into lower case
+            split()	Splits the string at the specified separator, and returns a list
+            splitlines()	Splits the string at line breaks and returns a list
+            swapcase()	Swaps cases, lower case becomes upper case and vice versa 
+            title()	Converts the first character of each word to upper case
+            upper()	Converts a string into upper case
+
+
+- Booleans
+    Booleans represent one of two values: True or False.
+    When you compare two values, the expression is evaluated and returns the Boolean answer: True or False
+      Examples: 
+        print(10 > 9)
+        print(10 == 9)
+        print(10 < 9)
+
+    - Most Values are True
+        Almost any value is evaluated to True if it has some sort of content.
+
+        Any string is True, except empty strings.
+
+        Any number is True, except 0.
+
+        Any list, tuple, set, and dictionary are True, except empty ones.
+
+    - Some Values are False
+        In fact, there are not many values that evaluate to False, 
+        except empty values, such as (), [], {}, "", 
+        the number 0, and the value None. 
+        And of course the value False evaluates to False
+      Example:- 
+        These will return False 
+            bool(False)
+            bool(None)
+            bool(0)
+            bool("")
+            bool(())
+            bool([])
+            bool({})
+
+        One more value, or object in this case, evaluates to False, 
+        and that is if you have an object that is made from a class with a __len__ function that returns 0 or False:
+      Example:-
+        class myclass():
+        def __len__(self):
+            return 0
+
+        myobj = myclass()
+        print(bool(myobj))
+
+- Operators:
+    Operators are used to perform operations on variables and values
+    Python divides the operators in the following groups:
+
+       - Arithmetic operators 
+            Arithmetic operators are used with numeric values to perform common mathematical operations:
+                +	Addition	    x + y	
+                -	Subtraction	    x - y	
+                *	Multiplication	x * y	
+                /	Division	    x / y	
+                %	Modulus	        x % y	
+                **	Exponentiation	x ** y	
+                //	Floor division	x // y
+
+        - Assignment operators
+            Assignment operators are used to assign values to variables:
+
+                =	x = 5	x = 5	
+                +=	 x += 3	        x = x + 3	
+                -=	 x -= 3	        x = x - 3	
+                *=	 x *= 3	        x = x * 3	
+                /=	 x /= 3	        x = x / 3	
+                %=	 x %= 3	        x = x % 3	
+                //=	 x //= 3	    x = x // 3	
+                **=	 x **= 3	    x = x ** 3	
+                &=	 x &= 3	        x = x & 3	
+                |=	 x |= 3	        x = x | 3	
+                ^=	 x ^= 3	        x = x ^ 3	
+                >>=	 x >>= 3	    x = x >> 3	
+                <<=	 x <<= 3	    x = x << 3	
+                :=	 print(x := 3)	x = 3 print(x)
+
+       - Comparison operators
+            Comparison operators are used to compare two values:
+
+                ==	Equal	                    x == y	
+                !=	Not equal	                x != y	
+                >	Greater than	            x > y	
+                <	Less than	                x < y	
+                >=	Greater than or equal to	x >= y	
+                <=	Less than or equal to	    x <= y
+
+       - Logical operators
+            Logical operators are used to combine conditional statements:
+
+                and 	Returns True if both statements are true	                x < 5 and  x < 10	
+                or	    Returns True if one of the statements is true	            x < 5 or x < 4	
+                not	    Reverse the result, returns False if the result is true	    not(x < 5 and x < 10)
+
+       - Identity operators
+            Identity operators are used to compare the objects, not if they are equal, 
+            but if they are actually the same object, with the same memory location:
+                is 	Returns True if both variables are the same object	        x is y	
+                is  not	Returns True if both variables are not the same object	x is not y
+       - Membership operators
+       - Bitwise operators
+            Bitwise operators are used to compare (binary) numbers:
+                & 	AND	Sets each bit to 1 if both bits are 1	            x & y	
+            |	OR	Sets each bit to 1 if one of two bits is 1	            x | y	
+                ^	XOR	Sets each bit to 1 if only one of two bits is 1	    x ^ y	
+                ~	NOT	Inverts all the bits	                            ~x	
+                <<	Zero fill left shift	Shift left by pushing zeros in from the right and let the leftmost bits fall off	                    x << 2	
+                >>	Signed right shift	Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off	    x >> 2
+
+            -Operator Precedence
+                Parentheses has the highest precedence, meaning that expressions inside parentheses must be evaluated first:
+                    print((6 + 3) - (6 + 3))
+                Multiplication * has higher precedence than addition +, and therefor multiplications are evaluated before additions:
+                    print(100 + 5 * 3)
+
+
+-Lists in python
+    Lists are used to store multiple items in a single variable.
+    Lists are created using square brackets:
+    List items are ordered, changeable, and allow duplicate values.
+    List items are indexed, the first item has index [0], the second item has index [1] etc.
+    mylist = ["apple", "banana", "cherry", "cheese]
+
+    -Ordered
+        When we say that lists are ordered, it means that the items have a defined order, and that order will not change.
+        If you add new items to a list, the new items will be placed at the end of the list.
+        Note: There are some list methods that will change the order, but in general: the order of the items will not change.
+        From Python's perspective, lists are defined as objects with the data type 'list': we can check type of the list using type()
+    -List Length
+        To determine how many items a list has, use the len() function:
+        Example: 
+            thislist = ["apple", "banana", "cherry"]
+            print(len(thislist))
+
+    -Python Collections (Arrays)
+        There are four collection data types in the Python programming language:
+            List:- is a collection which is ordered and changeable. Allows duplicate members.
+            Tuple:- is a collection which is ordered and unchangeable. Allows duplicate members.
+            Set:- is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+            Dictionary:- is a collection which is ordered** and changeable. No duplicate members.
+
+    - Access List Items
+        List items are indexed and we can access them by referring to the index number:
+        Note: The first item has index 0
+            thislist = ["apple", "banana", "cherry"]
+            print(thislist[1])
+
+    -Negative Indexing
+        Negative indexing means start from the end
+        -1 refers to the last item, -2 refers to the second last item etc.
+
+    -Range of Indexes
+        You can specify a range of indexes by specifying where to start and where to end the range.
+        When specifying a range, the return value will be a new list with the specified items.
+        Example:-
+            thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+            print(thislist[2:5])  //['cherry', 'orange', 'kiwi']
+
+        Note: The search will start at index 2 (included) and end at index 5 (not included).
+
+    -Check if Item Exists
+        To determine if a specified item is present in a list use the in keyword:
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            if "apple" in thislist:
+            print("Yes, 'apple' is in the fruits list")
+        
+    - Change List Items
+        To change the value of a specific item, refer to the index number:
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            thislist[1] = "blackcurrant"
+            print(thislist) // ['apple', 'blackcurrant', 'cherry'] here the 1 index is blackcurrant now
+
+    -Insert Items
+        To insert a new list item, without replacing any of the existing values, we can use the insert() method.
+        The insert() method inserts an item at the specified index:
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            thislist.insert(2, "watermelon")
+            print(thislist) // ['apple', 'banana', 'watermelon', 'cherry']
+
+    -Append Items
+        To add an item to the end of the list, use the append() method:
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            thislist.append("orange")
+            print(thislist)
+
+    -Extend List
+        To append elements from another list to the current list, use the extend() method.
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            tropical = ["mango", "pineapple", "papaya"]
+            thislist.extend(tropical)
+            print(thislist) // ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya'] Added tropical list to the thislist 
+            
+        The elements will be added to the end of the list.
+
+    -Remove Specified Item
+        The remove() method removes the specified item.
+        Example:- 
+            thislist = ["apple", "banana", "cherry"]
+            thislist.remove("banana")
+            print(thislist) // here banana will be removed from the thislist 
+            
+        If there are more than one item with the specified value, the remove() method removes the first occurrence:
+
+    -Remove Specified Index
+        The pop() method removes the specified index.
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            thislist.pop(1)
+            print(thislist) // here 1st index will be removed from the thislist 
+            
+        If we do not specify the index, the pop() method removes the last item.
+
+        The del keyword also removes the specified index:
+        Example:- 
+            thislist = ["apple", "banana", "cherry"]
+            del thislist[0]
+            print(thislist) this will remove the apple and print rest of the list
+
+        The del keyword can also delete the list completely.
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            del thislist 
+
+    -Clear the List
+        The clear() method empties the list.
+        Example:-
+            thislist = ["apple", "banana", "cherry"]
+            thislist.clear()
+            print(thislist)
+
+        The list still remains, but it has no content.
+
+
+- Tuple in python
+    Tuples are used to store multiple items in a single variable.
+
+    Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.
+
+    A tuple is a collection which is ordered and unchangeable.
+
+    Tuples are written with round brackets.
+
+- Tuple Items
+    Tuple items are ordered, unchangeable, and allow duplicate values.
+
+    Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
